@@ -14,7 +14,7 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function createDreamTeam(members) {
-  let newArr = members.filter(i=>typeof(i) === 'string');
+      let newArr = members.filter(i=>typeof(i) === 'string');
       let title = newArr.map(i=>{
       let reg = /\S/g;
       let b = i.match(reg)
