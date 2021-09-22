@@ -12,11 +12,12 @@ import { NotImplementedError } from '../extensions/index.js';
  * 
  */
 export default function getSeason(date) {
-  let day = date
-   
-  let month = day.getMonth()
+   if(date == '' || date == null){
+      return 'Unable to determine the time of year!'
+   }
   
-  console.log(month);
+  let month = date.getMonth()
+  
    if(month == 11|| month==0 || month==1){
       return 'winter'
    }else if(month == 2||month== 3||month== 4){
@@ -26,4 +27,9 @@ export default function getSeason(date) {
    }else{
       return 'autumn'
    }
+
 }
+// console.log(getSeason());
+
+// let zero = Date.parse(1987,false,21)
+// console.log(zero);
