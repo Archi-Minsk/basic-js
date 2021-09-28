@@ -12,10 +12,16 @@ import { NotImplementedError } from '../extensions/index.js';
  * 
  */
 export default function getSeason(date) {
-   if(date == '' || date == null){
-      return 'Unable to determine the time of year!'
-   }
+  if(!date) return 'Unable to determine the time of year!';
+
+  if(Object.prototype.toString.call(date) !== '[object Date]') throw new Error('Invalid date!');
   
+  try {
+   date.getTime();
+  } catch (error) {
+   throw new Error ('Invalid date!');
+  }
+
   let month = date.getMonth()
   
    if(month == 11|| month==0 || month==1){
@@ -29,7 +35,3 @@ export default function getSeason(date) {
    }
 
 }
-// console.log(getSeason());
-
-// let zero = Date.parse(1987,false,21)
-// console.log(zero);
