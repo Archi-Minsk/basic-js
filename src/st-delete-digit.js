@@ -12,7 +12,7 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function deleteDigit(n) {
-   let str = String(n);
+   let str = n.toString();
    let arr= str.split('');
    
    for(let i = 0;i<arr.length;i++){
